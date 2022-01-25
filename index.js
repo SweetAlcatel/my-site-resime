@@ -8,7 +8,6 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 const PORT = 3000;
 
 const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net/Backend-site-resume?retryWrites=true&w=majority';
@@ -17,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use('/', router);
 
-app.use(express.static(path.join(__dirname, 'Front/dist')));
+app.use(express.static(path.join(__dirname, './Front/dist')));
 
 const startApp = async () => {
     try {
@@ -31,4 +30,4 @@ const startApp = async () => {
     };
 };
 
-startApp();
+startApp(); 
