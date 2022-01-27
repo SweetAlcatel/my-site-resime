@@ -11,7 +11,7 @@ export const App = () => {
     const [data, setData] = useState([]);
 
     const getData = () => {
-        fetch('http://localhost:3000/getData')
+        fetch(`http://localhost:${process.env.PORT}/getData`)
         .then(response => response.json())
         .then(data => setData(data));
     };
