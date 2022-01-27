@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "http://localhost:3000", 
+        origin: "https://my-site-resume.herokuapp.com/", 
         credentials: true,
     })
 );
