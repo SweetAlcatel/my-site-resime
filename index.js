@@ -4,6 +4,7 @@ import router from './router.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,6 +16,8 @@ const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net
 const app = express();
 app.use(express.json());
 app.use('/', router);
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'Front/dist')));
 
