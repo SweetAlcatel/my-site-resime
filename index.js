@@ -15,12 +15,8 @@ const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net
 
 const app = express();
 
-app.use(
-    cors({
-        origin: "https://my-site-resume.herokuapp.com/", 
-        credentials: true,
-    })
-);
+app.use(cors());
+app.options('*', cors());
 
 app.use(express.json());
 
