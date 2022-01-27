@@ -17,7 +17,7 @@ const app = express();
 
 app.use(express.json());
 
-const whitelist = ["http://localhost:3000"]
+const whitelist = ["http://localhost:3000/getData"];
 
 const corsOptions = {
   origin: function (origin, callback) {
