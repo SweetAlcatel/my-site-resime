@@ -8,7 +8,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net/Backend-site-resume?retryWrites=true&w=majority';
 
