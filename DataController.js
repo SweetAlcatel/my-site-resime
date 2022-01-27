@@ -14,7 +14,7 @@ class DataController {
 
     async getData(req, res) {
         try {
-            res.set('Access-Control-Allow-Origin', '*');
+            res.set('Access-Control-Allow-Origin', 'http://localhost:8080');
             const data = await Info.find();
             res.status(200).json(data);
         } catch(e) {
