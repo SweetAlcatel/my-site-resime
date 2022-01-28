@@ -4,6 +4,7 @@ import router from './router.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net/Backend-site-resume?retryWrites=true&w=majority';
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
