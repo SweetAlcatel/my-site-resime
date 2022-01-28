@@ -4,7 +4,6 @@ import router from './router.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,9 +20,7 @@ app.use('/', router);
 
 app.use(express.static(path.join(__dirname, 'Front/dist')));
 
-console.log(path.join(__dirname, 'Front/dist', 'index.html'));
-
-app.get('/*', cors(), (req, res, next) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'Front/dist', 'index.html'));
 }); // Для неизвестных путей
 
