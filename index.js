@@ -15,17 +15,13 @@ const db_url = 'mongodb+srv://sweet-alcatel:1234567hj@cluster0.7ca1h.mongodb.net
 
 const app = express();
 
-app.use(cors());
-app.options('*', cors());
-
 app.use(express.json());
-
 
 app.use('/', router);
 
 app.use(express.static(path.join(__dirname, 'Front/dist')));
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
     res.sendFile(path.join(__dirname, 'Front/dist', 'index.html'));
 });
 
