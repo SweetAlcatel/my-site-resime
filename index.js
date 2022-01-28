@@ -21,7 +21,9 @@ app.use('/', router);
 
 app.use(express.static(path.join(__dirname, 'Front/dist')));
 
-app.get('/*', cors(), (req, res) => {
+console.log(path.join(__dirname, 'Front/dist', 'index.html'));
+
+app.get('/*', cors(), (req, res, next) => {
     res.sendFile(path.join(__dirname, 'Front/dist', 'index.html'));
 }); // Для неизвестных путей
 
