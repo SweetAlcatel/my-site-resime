@@ -11,7 +11,7 @@ export const App = () => {
     const [data, setData] = useState([]);
 
     const getData = () => {
-        fetch('http://localhost:3000/getData')
+        fetch('/getData')
         .then(response => response.json())
         .then(data => setData(data));
     };
@@ -23,7 +23,7 @@ export const App = () => {
     if(data.length === 0) {
         return (
             <div className='loading'>
-                <p>Загрузка</p>
+                <p>Загрузка...</p>
             </div>
         );
     } else {
