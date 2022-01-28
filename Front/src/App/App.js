@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import photo from '../../public/my_photo.jpg';
 import telephone from '../../public/telephone.png';
 import email from '../../public/email.png';
@@ -22,7 +22,7 @@ export const App = () => {
 
     if(data.length === 0) {
         return (
-            <div><p>Загрузка</p></div>
+            <div className='loading'><p>Загрузка</p></div>
         );
     } else {
         return (
@@ -31,7 +31,7 @@ export const App = () => {
                     <div className='photo'>
                         <img src={photo} className='my-photo'/>
                     </div>
-                    <div>
+                    <div className='div-data'>
                         <h1>{data[0].name}</h1> 
                         <h2>{data[0].title}</h2>
                         <div className='social-network'>
